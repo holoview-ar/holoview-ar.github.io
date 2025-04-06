@@ -1,10 +1,173 @@
 <!DOCTYPE html>
 <html>
 
-<title>Holoview</title>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<body>
-  Changes coming soon!
+    <title>Holoview</title>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="./holo/npm/bootstrap%405.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="./holo/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./js/dics/dics.original.css">
+    <script src="./js/dics/dics.original.js"></script>
+    <script src="./js/event_handler.js"></script>
+
+    <link href="./holo/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+    <link href="./holo/css-1?family=Inconsolata:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style_holo.css">
+</head>
+
+<body lang="en">
+    <main role="main">
+
+        <section class="jumbotron text-center" id="banner">
+            <div class="container text-center" id="title">
+                <h2 class="jumbotron-heading text-center" style="line-height: 35px;">
+                    Holoview: Interactive 3D visualization of medical data in AR
+                </h2>
+                
+            </div>
+
+            <div class="container" style="max-width: none; margin-top:10px;">
+
+                <div class="row row-author" style="margin: 0 70px 0 70px; ">
+                    <div class="col-md author">
+                        <a class="link">Anonymous Authors</a><sup style="margin-right:10px"></sup>
+                    </div>   
+
+            <div class="row">
+                <div class="col-md">
+                    <ul class="nav nav-pills">
+                        <li style="padding-top: 10px;" class="space-between">
+                            <a href="" class="hover-image-link" style="padding-top: 0;">
+                            <image class="first-image" src="./assets/icons/paper.png" width="60px"></image>
+                            <image class="second-image" src="./assets/icons/paper_hover.png" width="60px"></image>
+                            <h3 style="font-size: 1.2rem; padding-top: 10px;"><strong>Paper</strong></h3>
+                            </a>
+                        </li>
+                        <li style="padding-top: 10px;"  class="space-between">
+                            <a href="https://holoview-ar.github.io/" class="hover-image-link" >
+                            <image class="first-image" src="./assets/icons/github.png" width="60px"></image>
+                            <image class="second-image" src="./assets/icons/github_hover.png" width="60px"></image>
+                            <h3 style="font-size: 1.2rem; padding-top: 10px;"><strong>Code</strong></h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container" style="padding-top: 20px;">
+        </section>
+    </main>
+
+
+    <div class="container">
+
+        <hr>
+        <div class="text-center;" style="padding-top: 30px; padding-bottom: 30px">
+            <image src="./assets/images/teaser_defaced.png" class="img-responsive" alt="intro">
+        </div>
+
+        <!-- Abstract -->
+        <h5>Abstract</h5>
+        <p style="text-align: justify; padding-bottom: 30px;">
+            We present Holoview, an augmented reality (AR) system designed for immersive exploration of human anatomy. Holoview enables users to dynamically select and visualize organs from volumetric data in an interactive 3D environment. Using hand gestures, users can freely navigate full-body anatomy and inspect individual organs, enhancing learning and collaboration. The system is optimized for real-time performance through a remote rendering architecture: a lightweight client (HoloLens) and a high-quality rendering server. To ensure smooth visualization without compromising quality, we use a hybrid rendering scheme, foveated rendering, and network optimizations. Holoview significantly facilitates anatomical structure visualization and promotes an engaging, user-centric learning experience, making it a valuable tool for medical education.
+        </p>
+        <hr>
+        
+        <!--Video-->
+        <h5>Demo video</h5>
+        
+            <div class="container">
+                <div class="item">
+                    <p style="margin-bottom: 30px">
+                <video poster="" id="tree" autoplay controls muted loop width="100%">
+                    <source src="./assets/videos/Holoview_demo_video_masked.mp4"
+                    type="video/mp4">
+                </video>
+                </p>
+                </div>
+            </div>
+
+        <!--System architecture-->
+        <h5>System architecture</h5>
+        <div class="text-center;" style="padding-top: 30px; padding-bottom: 30px">
+            <image src="./assets/images/sysarch.png" class="img-responsive" alt="intro">
+        </div>
+
+        <div class="container">
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="vertical-align: top;">
+                    <img src="./assets/images/selective_rendering.png" alt="Selective Rendering" width="100%">
+                </td>
+                <td style="vertical-align: top;">
+                    <img src="./assets/images/navigation.png" alt="Navigation" width="100%">
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Selective rendering in Holoview enables interactive selection and visualization of specific organs using hand gestures.
+                </td>
+                <td style="vertical-align: top;">
+                    Navigation enables users to explore the human body model in the AR environment through hand gestures.
+                </td>
+            </tr>            
+            <tr>
+                <td style="vertical-align: top;">
+                    <img src="./assets/images/bioscope.png" alt="Bioscope" width="100%">
+                </td>
+                <td style="vertical-align: top;">
+                    <img src="./assets/images/clipping_plane.png" alt="Clipping Plane" width="100%">
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    Bioscope mode is designed to examine a single organ in the body.
+                </td>
+                <td style="vertical-align: top;">
+                    A clipped volume visualization is achieved using a hand-controlled clipping plane.
+                </td>
+            </tr>            
+        </table>
+        </div>
+
+
+
+
+        
+    </div>
+
+    <!--Attribution-->
+    <hr>
+    <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  Website content is licensed under a <a rel="license"
+                                                      href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+                  Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                </p>
+                <p>
+                  Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+                    href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
 </body>
-
 </html>
